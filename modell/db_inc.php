@@ -1,10 +1,15 @@
 <?php
 
 // Adatbázis adatok
-$host = "localhost";
+/* $host = "localhost";
 $user = "c31hbencedbu";
 $password = "mJaTyh!D52";
-$dbname = "c31hbencedb";
+$dbname = "c31hbencedb"; */
+
+$host = "localhost";
+$user = "Bencee999";
+$password = "E(NN(!YKO-tRqSwt";
+$dbname = "szakdoga";
 
 // Adatbázis csatlakozás létrehozása
 $conn = mysqli_connect($host, $user, $password, $dbname);
@@ -15,6 +20,8 @@ if (!$conn) {
 }
 echo "Sikeres adatbázis csatlakozás!";
 
-// Adatbázis csatlakozás lezárása
-mysqli_close($conn);
 
+// Adatbázis csatlakozás lezárása
+/* mysqli_close($conn); */
+
+?>

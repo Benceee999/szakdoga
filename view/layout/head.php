@@ -16,27 +16,58 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="#">Kezdőlap <span class="sr-only"></span></a>
+        <a class="nav-link" href="index.php">Kezdőlap <span class="sr-only"></span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
+        <a class="nav-link" href="#">Gépjármű be- és kiléptetés</a>
       </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Esemény kezelés</a>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Keresés" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Keresés</button>
-    </form>
+<?php
+
+require_once 'modell/db_inc.php';
+
+if(isset($_POST['submit'])){
+    $username = $_POST['username'];
+    $password = md5($_POST['password']);
+
+    $query = "SELECT * FROM felhasznalok";
+    $result = mysqli_query($conn, $query);
+
+    $query = "SELECT * FROM felhasznalok WHERE Felhasznalonev='$username' AND Jelszo='$password'";
+    $result = mysqli_query($conn, $query);
+
+    if (mysqli_num_rows($result) > 0) {
+        echo "<script>alert('Hello World!');</script>";
+        echo "<script>document.getElementById('username').value = '';</script>";
+        echo "<script>document.getElementById('password').value = '';</script>";
+    } else {
+        if (mysqli_num_rows(mysqli_query($conn, "SELECT * FROM felhasznalok WHERE Felhasznalonev='$username'")) == 0) {
+            echo "<script>alert('Hibás felhasználónév!');</script>";
+        } else {
+            echo "<script>alert('Hibás jelszó!');</script>";
+        }
+    }
+}
+?>
+<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Bejelentkezés
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <form class="px-4 py-3" action="" method="post">
+                <div class="form-group">
+                    <label for="username">Felhasználónév</label>
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Felhasználónév">
+                </div>
+                <div class="form-group">
+                    <label for="password">Jelszó</label>
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Jelszó">
+                </div>
+                <button type="submit" name="submit" class="btn btn-primary">Bejelentkezés</button>
+            </form>
+        </div>
   </div>
 </nav>
 </body>
