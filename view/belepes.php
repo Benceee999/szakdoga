@@ -22,14 +22,14 @@
           Bejelentkezés
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <form class="px-4 py-3" action="?action=login" method="POST">
+            <form class="px-4 py-3" action="index.php" method="POST">
                 <div class="form-group">
                     <label for="username">Felhasználónév</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Felhasználónév" required>
+                    <input type="text" class="form-control" name="felhnev" placeholder="Felhasználónév" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Jelszó</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Jelszó" required>
+                    <input type="password" class="form-control" name="jelszo" placeholder="Jelszó" required>
                 </div>
                 <input type="hidden" name="action" value="belepes">
                 <input type="hidden" name="page" value="felhasznalo">

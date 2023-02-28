@@ -9,10 +9,10 @@
 
     $action = $_REQUEST['action'] ?? "";
 
-    $loginReaction = array(
-        "Rossz felhasználónév",
-        "Rossz jelszó",
-        "Sikeres bejelentkezés",
+    $eredmenySzovegek = array(
+        "Nincs ilyen felhasználónév",
+        "Sikertelen belépés: hibás jelszó!",
+        "Sikeres belépés"
     );
 
     switch ($action){
@@ -23,12 +23,8 @@
 
         case 'login':
             if(isset($_POST['username']) && isset($_POST['password'])){
-
-            $login = $user->checkLogin($_POST['username'], $_POST['password']);
-
-            $loginResult = $loginReaction[$login];
-
-            echo $loginResult . "<br>";
+            $login = $belepes->checkLogin($_POST['username'], $_POST['password']);
+            $eredmeny = $eredmenySzovegek[$login];
             }
         break;
     }
