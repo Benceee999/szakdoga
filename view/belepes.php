@@ -16,25 +16,27 @@
         <a class="nav-link" href="#">Esemény kezelés</a>
       </li>
     </ul>
-
-
+    
     
     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Bejelentkezés
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-            <form class="px-4 py-3" action="" method="post">
+            <form class="px-4 py-3" action="?action=login" method="POST">
                 <div class="form-group">
                     <label for="username">Felhasználónév</label>
-                    <input type="text" class="form-control" id="username" name="username" placeholder="Felhasználónév">
+                    <input type="text" class="form-control" id="username" name="username" placeholder="Felhasználónév" required>
                 </div>
                 <div class="form-group">
                     <label for="password">Jelszó</label>
-                    <input type="password" class="form-control" id="password" name="password" placeholder="Jelszó">
+                    <input type="password" class="form-control" id="password" name="password" placeholder="Jelszó" required>
                 </div>
+                <input type="hidden" name="action" value="belepes">
+                <input type="hidden" name="page" value="felhasznalo">
                 <button type="submit" name="submit" class="btn btn-primary">Bejelentkezés</button>
             </form>
         </div>
+        
   </div>
 </nav>
 </body>

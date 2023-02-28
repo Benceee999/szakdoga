@@ -12,6 +12,7 @@ class DataBase {
     private $password = "E(NN(!YKO-tRqSwt";
     private $dbname = "szakdoga"; 
 
+
     private $conn;
 
     function __construct() {
