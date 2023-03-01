@@ -2,23 +2,24 @@
 
 require_once 'db_inc.php';
 
-class Belepes{
+class User{
 
     private $ID;
-    private $felhnev;
+    private $username;
     private $db;
 
     function __construct($db){
         $this->db=$db;
     }
 
-    public function checkLogin($felhNev, $jelszo) {
-        $sql = "SELECT * FROM felhasznalok WHERE Felhasznalonev = '".$felhNev."'";
+    public function checkLogin($username, $password) {
+        $sql = "SELECT * FROM felhasznalok WHERE Felhasznalonev = '".$username."'";
         // van ilyen felhasználó?    
         if($result = $this->db->dbSelect($sql)) {
             if($row = $result->fetch_assoc()) {
-                // jó ez a jelszó hozzá?
-                if($row['jelszo'] == md5($jelszo)) {
+                if($row['Felhasznalonev'] == $username){
+                    echo $username;
+                if($row['password'] == md5($password)) {
                     $eredmeny = 2; // Sikeres belépés
                     $_SESSION["nev"] = $row['Felhasznalonev'];
                     $_SESSION["id"] = $row['ID'];
@@ -34,5 +35,6 @@ class Belepes{
         return $eredmeny;
     }
     
+}
 }
 ?>

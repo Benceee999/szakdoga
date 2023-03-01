@@ -1,5 +1,5 @@
 <?php
-include 'view/layout/head.php';
+include 'layout/head.php';
 
 echo "Hello world!";
 ?>

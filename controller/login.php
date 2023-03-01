@@ -1,7 +1,7 @@
 <?php
 
-    require 'model/belepes.php';
-    $belepes= new Belepes($db);
+    require 'model/user.php';
+    $user= new User($db);
 
     $loginResult = "";
 
@@ -23,8 +23,9 @@
 
         case 'login':
             if(isset($_POST['username']) && isset($_POST['password'])){
-            $login = $belepes->checkLogin($_POST['username'], $_POST['password']);
+            $login = $user->checkLogin($_POST['username'], $_POST['password']);
             $eredmeny = $eredmenySzovegek[$login];
             }
         break;
     }
+    require 'view/login.php';
