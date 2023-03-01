@@ -9,10 +9,10 @@
 </head>
 <body>
 <form action="index.php" method="post">
-    <input type="text" id="username" class="form-control" required/>
+    <input type="text" id="username" name="username" class="form-control" required/>
     <label class="form-label" for="username">Felhasználónév</label>
 
-    <input type="password" id="password" class="form-control" required/>
+    <input type="password" id="password" name="password" class="form-control" required/>
     <label class="form-label" for="password">Jelszó</label>
     <br>
     <a href="#">Elfelejtett jelszó</a>

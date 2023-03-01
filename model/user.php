@@ -17,11 +17,9 @@ class User{
         // van ilyen felhasználó?    
         if($result = $this->db->dbSelect($sql)) {
             if($row = $result->fetch_assoc()) {
-                if($row['Felhasznalonev'] == $username){
-                    echo $username;
                 if($row['password'] == md5($password)) {
                     $eredmeny = 2; // Sikeres belépés
-                    $_SESSION["nev"] = $row['Felhasznalonev'];
+                    $_SESSION["nev"] = $row['Nev'];
                     $_SESSION["id"] = $row['ID'];
                 }
                 else {
@@ -35,6 +33,5 @@ class User{
         return $eredmeny;
     }
     
-}
 }
 ?>

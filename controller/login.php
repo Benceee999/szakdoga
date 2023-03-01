@@ -25,6 +25,7 @@
             if(isset($_POST['username']) && isset($_POST['password'])){
             $login = $user->checkLogin($_POST['username'], $_POST['password']);
             $eredmeny = $eredmenySzovegek[$login];
+            print_r($_SESSION['ID']);
             }
         break;
     }

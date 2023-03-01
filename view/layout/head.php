@@ -9,23 +9,9 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <?php
-    if(!isset($_SESSION['id'])){
-            echo'
-            <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.php">Kezdőlap <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Jelentkezés</a>
-            </li>
-          </ul>
-    <a class="nav-link" href="index.php?page=login&action=login"  role="button">
-          Bejelentkezés
-        </a>
-    ';
-}else{
-    echo '
-    <a class="navbar-brand" href="#">Navbar</a>
+    if(isset($_SESSION['id'])){
+            echo '
+            <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
@@ -42,12 +28,35 @@
       </li>
     </ul>
 
-    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="nav-link" href="#">Profil</a>
-        <a class="nav-link" href="#">Valami</a>
-    <div class="dropdown-divider"></div>
-        <a class="nav-link" href="index.php?page=login&action=logout">Kijelentkezés</a>
-    </div>
+    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Bejelentkezés
+        </a>
+        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+            <form class="px-4 py-3" action="" method="post">
+                <div class="form-group">
+                  <a class="nav-link" href="#">profil</a>
+                  <a class="nav-link" href="#">Valami</a>
+                  <a class="nav-link" href="index.php?page=login&action=logout"  role="button">
+                    Kijelentkezés
+                  </a>
+                </div>
+            </form>
+        </div>
+            
+    ';
+}else{
+    echo '
+    <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.php">Kezdőlap <span class="sr-only"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Jelentkezés</a>
+            </li>
+          </ul>
+    <a class="nav-link" href="index.php?page=login&action=login" role="button">
+          Bejelentkezés
+        </a>
     ';
 }
     ?>
