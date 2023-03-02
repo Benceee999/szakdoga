@@ -34,6 +34,4 @@ class User{
     }
     
 }
-print_r($_SESSION['id']);
-echo ('<a href="index.php">home</a>')
 ?>
