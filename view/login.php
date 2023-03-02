@@ -17,7 +17,7 @@
     <br>
     <a href="#">Elfelejtett jelszó</a>
   
-    <button type="button" class="btn btn-primary btn-block mb-4">Belépés</button>
+    <button type="submit" class="btn btn-primary btn-block mb-4">Belépés</button>
     
     <input type="hidden" name="action" value="login">
     <input type="hidden" name="page" value="login">
