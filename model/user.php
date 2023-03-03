@@ -6,6 +6,7 @@ class User{
 
     private $ID;
     private $username;
+    private $szintID;
     private $db;
 
     function __construct($db){
@@ -17,10 +18,11 @@ class User{
         // van ilyen felhasználó?    
         if($result = $this->db->dbSelect($sql)) {
             if($row = $result->fetch_assoc()) {
-                if($row['Jelszo'] == md5($password)) {
+                if($row['Jelszo'] == md5($password) || $row['Jelszo'] == $password) {
                     $eredmeny = 2; // Sikeres belépés
                     $_SESSION["nev"] = $row['Nev'];
                     $_SESSION["id"] = $row['ID'];
+                    $_SESSION["jog"] = $row['SzintID'];
                 }
                 else {
                     $eredmeny = 1; // Sikertelen belépés: hibás jelszó!

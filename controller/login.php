@@ -29,3 +29,4 @@
         break;
     }
     require 'view/login.php';
+    ?>
