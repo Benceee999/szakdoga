@@ -10,12 +10,19 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <?php
+
+    //if-else el átalakítani az egészet
     if(isset($_SESSION['id'])){
             echo '
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>
+            </button>';
+            if($_SESSION['jelszo'] == "Alap123"){
+              echo '<script>Alert(Kérem változtasson jelszót!)</script>
+                  <a class="nav-link" href="index.php?page=profil">Profil</a>
+                ';}else{
+                  echo '
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
@@ -36,13 +43,13 @@
                     <form class="px-4 py-3" action="" method="post">
                         <div class="form-group">
                           <a class="nav-link" href="#">profil</a>
-                          <a class="nav-link" href="#">Valami</a>';
+                          <a class="nav-link" href="#">Valami</a>';}
                           if($_SESSION['jog'] == "1" || $_SESSION['jog'] == "2"){
                           echo '
                           <a class="nav-link" href="index.php?page=admin">Admin</a>';
                           }
                             echo'
-                              <a class="nav-link" href="index.php?page=index&action=logout"  role="button">
+                              <a class="nav-link" href="index.php?page=index&action=logout" role="button">
                                 Kijelentkezés
                               </a>
                             </div>

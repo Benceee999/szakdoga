@@ -7,6 +7,7 @@ class User{
     private $ID;
     private $username;
     private $szintID;
+    private $password;
     private $db;
 
     function __construct($db){
@@ -23,6 +24,7 @@ class User{
                     $_SESSION["nev"] = $row['Nev'];
                     $_SESSION["id"] = $row['ID'];
                     $_SESSION["jog"] = $row['SzintID'];
+                    $_SESSION["jelszo"] = $row['Jelszo'];
                 }
                 else {
                     $eredmeny = 1; // Sikertelen belépés: hibás jelszó!

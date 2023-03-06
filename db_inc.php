@@ -2,15 +2,15 @@
 
 class DataBase {
 
-    /* private $servername = "localhost";
+    private $servername = "localhost";
     private $username = "c31hbencedbu";
     private $password = "mJaTyh!D52";
     private $dbname = "c31hbencedb";
- */
-    private $servername = "localhost";
+
+    /* private $servername = "localhost";
     private $username = "Bencee999";
     private $password = "E(NN(!YKO-tRqSwt";
-    private $dbname = "szakdoga"; 
+    private $dbname = "szakdoga";  */
 
 
     private $conn;
