@@ -17,11 +17,5 @@ if(file_exists($controllerFile)) {
 // Generate a session ID based on the current URL
 $session_id = md5($_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']);
 
-// Append the session ID to all links and forms on the page
-function append_session_id($url) {
-  global $session_id;
-  return $url . (strpos($url, '?') === false ? '?' : '&') . 'sid=' . $session_id;
-}
-ini_set('arg_separator.output', '&amp;'); // Ensure that & is encoded as &amp; in URLs
-ob_start('append_session_id'); // Use output buffering to append the session ID to all links and forms
+$_SESSION['session_id'] = $session_id;
     ?>
