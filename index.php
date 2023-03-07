@@ -1,11 +1,10 @@
 <?php
 
-session_name('my_session');
+session_name('Bence');
 session_start();
 
 require 'db_inc.php';
-$db = new DataBase();
-
+$db = new DB();
 
 $page = $_REQUEST['page'] ?? "index";
 

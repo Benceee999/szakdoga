@@ -10,17 +10,21 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <?php
-
-    //if-else el átalakítani az egészet
+    //else-if el átalakítani az egészet
     if(isset($_SESSION['id'])){
             echo '
             <a class="navbar-brand" href="#">Navbar</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>';
-            if($_SESSION['jelszo'] == "Alap123"){
-              echo '<script>Alert(Kérem változtasson jelszót!)</script>
-                  <a class="nav-link" href="index.php?page=profil">Profil</a>
+            if($_SESSION['jelszo'] == md5('Alap123')){
+              echo "<script>alert('Kérem változtassa meg a jelszavát!');</script>";
+              echo '<div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="index.php?page=profil">Profil</a>
+                  </li>
+                </ul>
                 ';}else{
                   echo '
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -44,7 +48,7 @@
                         <div class="form-group">
                           <a class="nav-link" href="#">profil</a>
                           <a class="nav-link" href="#">Valami</a>';}
-                          if($_SESSION['jog'] == "1" || $_SESSION['jog'] == "2"){
+                          if($_SESSION['jog'] == "Admin" || $_SESSION['jog'] == "Vezető"){
                           echo '
                           <a class="nav-link" href="index.php?page=admin">Admin</a>';
                           }

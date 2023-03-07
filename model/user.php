@@ -19,11 +19,11 @@ class User{
         // van ilyen felhasználó?    
         if($result = $this->db->dbSelect($sql)) {
             if($row = $result->fetch_assoc()) {
-                if($row['Jelszo'] == md5($password) || $row['Jelszo'] == $password) {
+                if($row['Jelszo'] == md5($password)) {
                     $eredmeny = 2; // Sikeres belépés
                     $_SESSION["nev"] = $row['Nev'];
                     $_SESSION["id"] = $row['ID'];
-                    $_SESSION["jog"] = $row['SzintID'];
+                    $_SESSION["jog"] = $row['Jog'];
                     $_SESSION["jelszo"] = $row['Jelszo'];
                 }
                 else {
