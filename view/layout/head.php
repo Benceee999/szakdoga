@@ -1,81 +1,110 @@
 <!DOCTYPE html>
 <html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Users / Profile - NiceAdmin Bootstrap Template</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin - v2.5.0
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 </head>
 <body>
-<header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <?php
-    //else-if el átalakítani az egészet
-    if(isset($_SESSION['id'])){
-            echo '
-            <a class="navbar-brand" href="#">Navbar</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>';
-            if($_SESSION['jelszo'] == md5('Alap123')){
-              echo "<script>alert('Kérem változtassa meg a jelszavát!');</script>";
-              echo '<div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="index.php?page=profil">Profil</a>
-                  </li>
-                </ul>
-                ';}else{
-                  echo '
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                  <a class="nav-link" href="index.php">Kezdőlap <span class="sr-only"></span></a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="index.php?page=esemenyek">Gépjármű be- és kiléptetés</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Esemény kezelés</a>
-                </li>
-              </ul>
+<!-- ======= Header ======= -->
+<header id="header" class="header fixed-top d-flex align-items-center">
 
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  Menu
-                </a>
-                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                    <form class="px-4 py-3" action="" method="post">
-                        <div class="form-group">
-                          <a class="nav-link" href="#">profil</a>
-                          <a class="nav-link" href="#">Valami</a>';}
-                          if($_SESSION['jog'] == "Admin" || $_SESSION['jog'] == "Vezető"){
-                          echo '
-                          <a class="nav-link" href="index.php?page=admin">Admin</a>';
-                          }
-                            echo'
-                              <a class="nav-link" href="index.php?page=index&action=logout" role="button">
-                                Kijelentkezés
-                              </a>
-                            </div>
-                    </form>
-                </div>
-                    
+<div class="d-flex align-items-center justify-content-between">
+  <a href="index.php" class="logo d-flex align-items-center">
+    <img src="assets/img/logo.png" alt="">
+    <span class="d-none d-lg-block">NiceAdmin</span>
+  </a>
+</div><!-- End Logo -->
+<nav class="header-nav ms-auto">
+  <ul class="d-flex align-items-center">
+  <li class="nav-item dropdown pe-3">
 
-                          ';
-}else{
+<?php 
+  if(isset($_SESSION['id']) ){
+    if($_SESSION['jelszo'] == md5('Alap123')){
+      echo "<script>alert('Kérem változtassa meg a jelszavát!');</script>";
+    }else
     echo '
-    <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.php">Kezdőlap <span class="sr-only"></span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Jelentkezés</a>
-            </li>
-          </ul>
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+        <span class="d-none d-md-block dropdown-toggle ps-2">'.$_SESSION['nev'].'</span>
+      </a><!-- End Profile Iamge Icon -->
+
+      <ul class="dropdown-menu dropdown-menu-right dropdown-menu-arrow profile">
+        <li class="dropdown-header">
+          <h6>'.$_SESSION['nev'].'</h6>
+          <span>'.$_SESSION['jog'].'</span>
+        </li>
+        <li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+            <i class="bi bi-person"></i>
+            <span>My Profile</span>
+          </a>
+        </li>
+
+        <li>
+          <hr class="dropdown-divider">
+        </li>';
+        if($_SESSION['jog'] == 'admin' || $_SESSION['jog'] == 'vezető'){
+        echo '<li>
+          <a class="dropdown-item d-flex align-items-center" href="index.php?page=admin"">
+            <i class="bi bi-person"></i>
+            <span>Admin</span>
+          </a>
+        </li>';
+        }
+        echo '<li>
+          <hr class="dropdown-divider">
+        </li>
+
+        <li>
+          <a class="dropdown-item d-flex align-items-center" href="index.php?page=index&action=logout">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>Kijelentkezés</span>
+          </a>
+        </li>
+
+      </ul>';
+  }else{
+    echo'
+
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link nav-profile align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           Bejelentkezés
         </a>
-        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+        <div class="dropdown-menu dropdown-menu-right">
             <form class="px-4 py-3" action="index.php" method="post">
                 <div class="form-group">
                     <label for="username">Felhasználónév</label>
@@ -84,7 +113,7 @@
                 <div class="form-group">
                     <label for="password">Jelszó</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Jelszó">
-                </div>
+                </div><br>
                 <button type="submit" name="submit" class="btn btn-primary">Bejelentkezés</button>
                 <br>
                 <a class="form-group" href="#">Elfelejtett jelszó</a>
@@ -93,12 +122,28 @@
             </form>
         </div>
     ';
-    //print_r($_SESSION['id']);
-}
-    ?>
+
+  }
+
+  //print_r($_POST);
+?>
+  </li>
+  </ul>
+</nav><!-- End Icons Navigation -->
+
+</header><!-- End Header -->
+
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Vendor JS Files -->
+<script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/chart.js/chart.umd.js"></script>
+  <script src="assets/vendor/echarts/echarts.min.js"></script>
+  <script src="assets/vendor/quill/quill.min.js"></script>
+  <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+  <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
 </html>
-</header>
