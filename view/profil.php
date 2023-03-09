@@ -32,8 +32,8 @@
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
               <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-              <h2>Kevin Anderson</h2>
-              <h3>Web Designer</h3>
+              <h2>Horváth Bence</h2>
+              <h3>Méteres kékeres tulajdonos</h3>
             </div>
           </div>
 

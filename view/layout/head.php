@@ -45,9 +45,7 @@
     <span class="d-none d-lg-block">NiceAdmin</span>
   </a>
 </div><!-- End Logo -->
-<nav class="header-nav ms-auto">
-  <ul class="d-flex align-items-center">
-  <li class="nav-item dropdown pe-3">
+
 
 <?php 
   if(isset($_SESSION['id']) ){
@@ -55,9 +53,22 @@
       echo "<script>alert('Kérem változtassa meg a jelszavát!');</script>";
     }
     echo '
+      
+      <div class="nav-item active" style="padding-right: 20px">
+                    <a class="nav-link" href="index.php?page=esemenyek">Esemény kezelő</a>
+      </div>
+
+      <div class="nav-item active" style="padding-right: 20px">
+                    <a class="nav-link" href="index.php?page=gepjarmu">Gépjármű be- és kiléptetés</a>
+      </div>
+   
+                  <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+      <li class="nav-item dropdown pe-3">
+
       <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
         <span class="d-none d-md-block dropdown-toggle ps-2">'.$_SESSION['nev'].'</span>
-      </a><!-- End Profile Iamge Icon -->
+      </a>
 
       <ul class="dropdown-menu dropdown-menu-right dropdown-menu-arrow profile">
         <li class="dropdown-header">
@@ -69,7 +80,7 @@
         </li>
 
         <li>
-          <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+          <a class="dropdown-item d-flex align-items-center" href="index.php?page=profil">
             <i class="bi bi-person"></i>
             <span>My Profile</span>
           </a>
