@@ -53,7 +53,7 @@
   if(isset($_SESSION['id']) ){
     if($_SESSION['jelszo'] == md5('Alap123')){
       echo "<script>alert('Kérem változtassa meg a jelszavát!');</script>";
-    }else
+    }
     echo '
       <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
         <span class="d-none d-md-block dropdown-toggle ps-2">'.$_SESSION['nev'].'</span>
@@ -78,7 +78,7 @@
         <li>
           <hr class="dropdown-divider">
         </li>';
-        if($_SESSION['jog'] == 'admin' || $_SESSION['jog'] == 'vezető'){
+        if($_SESSION['jog'] == 'Admin' || $_SESSION['jog'] == 'vezető'){
         echo '<li>
           <a class="dropdown-item d-flex align-items-center" href="index.php?page=admin"">
             <i class="bi bi-person"></i>
