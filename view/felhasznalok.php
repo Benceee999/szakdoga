@@ -20,7 +20,7 @@
 
               </ul>
               <div class="tab-content pt-2">
-
+              <!-- Új felhasználó hozzáadása -->
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
 
                   <h5 class="card-title">Új felhasználó felvétele</h5>
@@ -58,7 +58,7 @@
 
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
-                  <!-- Profile Edit Form -->
+                  <!-- Felhasználók listája -->
                   <?php
                   echo '
               <form>

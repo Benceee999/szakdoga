@@ -35,8 +35,6 @@
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
 
                   <h5 class="card-title">Új hír írása</h5>
-                  <?php
-                  echo '
           
                   <div class="row mb-3">
                   <label for="hircim" class="col-md-4 col-lg-3 col-form-label">Hír címe</label>
@@ -55,8 +53,6 @@
                 <div class="text-center">
                       <button type="submit" class="btn btn-primary">Hír posztolása</button>
                     </div>
-              '
-                    ?>
 
                 </div>
 

@@ -9,6 +9,28 @@
       <span>Kezdőlap</span>
     </a>
   </li><!-- End Dashboard Nav -->
+  <li class="nav-item">
+    <a class="nav-link" href="index.php?page=esemenyek">
+      <i class="bi bi-grid"></i><span>Eseménykezelő</span>
+    </a>
+  </li><!-- End Hírek Nav -->
+  <li class="nav-item">
+    <a class="nav-link" href="index.php?page=gepjarmu">
+      <i class="bi bi-grid"></i><span>Gépjármű be- és kiléptetés</span>
+    </a>
+  </li><!-- End Hírek Nav -->
+  <li class="nav-item">
+    <a class="nav-link" href="#">
+      <i class="bi bi-grid"></i><span>Beosztás</span>
+    </a>
+  </li><!-- End Beosztás Nav -->
+
+
+  <?php
+  if($_SESSION['jog'] == 'Admin' || $_SESSION['jog'] == 'vezető'){
+    echo'
+
+    <li class="nav-heading">Vezetőségi részleg</li>
 
   <li class="nav-item">
     <a class="nav-link" href="index.php?page=hirek">
@@ -23,16 +45,12 @@
   </li><!-- End Körlevél Nav -->
 
   <li class="nav-item">
-    <a class="nav-link" href="#">
-      <i class="bi bi-grid"></i><span>Beosztás</span>
-    </a>
-  </li><!-- End Beosztás Nav -->
-
-  <li class="nav-item">
     <a class="nav-link" href="index.php?page=felhasznalok">
       <i class="bi bi-grid"></i><span>Felhasználók</span>
     </a>
   </li><!-- End Felhasználók Nav -->
 </ul>
-
+  ';
+}
+?>
 </aside><!-- End Sidebar-->
