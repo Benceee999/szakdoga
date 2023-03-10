@@ -29,7 +29,7 @@
   </li><!-- End Beosztás Nav -->
 
   <li class="nav-item">
-    <a class="nav-link" href="#">
+    <a class="nav-link" href="index.php?page=felhasznalok">
       <i class="bi bi-grid"></i><span>Felhasználók</span>
     </a>
   </li><!-- End Felhasználók Nav -->

@@ -1,7 +1,7 @@
 <?php
 
 require 'model/user.php';
-$user= new User($db);
+$user = new User($db);
 
 $eredmeny = "";
 
@@ -15,18 +15,18 @@ $eredmenySzovegek = array(
     "Sikeres belépés"
 );
 
-switch ($action){
+switch ($action) {
     case 'logout':
         session_unset();
         $loginResult = "Sikeres kijelentkezés";
-    break;
+        break;
 
     case 'login':
-        if(isset($_POST['username']) && isset($_POST['password'])){
-        $login = $user->checkLogin($_POST['username'], $_POST['password']);
-        $eredmeny = $eredmenySzovegek[$login];
+        if (isset($_POST['username']) && isset($_POST['password'])) {
+            $login = $user->checkLogin($_POST['username'], $_POST['password']);
+            $eredmeny = $eredmenySzovegek[$login];
         }
-    break;
+        break;
 }
 
 require 'view/index.php';
