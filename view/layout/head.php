@@ -44,6 +44,7 @@
     <img src="assets/img/logo.png" alt="">
     <span class="d-none d-lg-block">NiceAdmin</span>
   </a>
+  <i class="bi bi-list toggle-sidebar-btn"></i>
 </div><!-- End Logo -->
 
 
@@ -52,15 +53,9 @@
     if($_SESSION['jelszo'] == md5('Alap123')){
       echo "<script>alert('Kérem változtassa meg a jelszavát!');</script>";
     }
+    require_once('view/layout/sidebar.php');
     echo '
       
-      <div class="nav-item active" style="padding-right: 20px">
-                    <a class="nav-link" href="index.php?page=esemenyek">Esemény kezelő</a>
-      </div>
-
-      <div class="nav-item active" style="padding-right: 20px">
-                    <a class="nav-link" href="index.php?page=gepjarmu">Gépjármű be- és kiléptetés</a>
-      </div>
    
       <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
