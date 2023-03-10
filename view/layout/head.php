@@ -62,7 +62,7 @@
                     <a class="nav-link" href="index.php?page=gepjarmu">Gépjármű be- és kiléptetés</a>
       </div>
    
-                  <nav class="header-nav ms-auto">
+      <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
       <li class="nav-item dropdown pe-3">
 
@@ -111,6 +111,8 @@
       </ul>';
   }else{
     echo'
+    <nav class="header-nav ms-auto">
+    <ul class="d-flex align-items-center">
 
           <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link nav-profile align-items-center pe-0" href="#" data-bs-toggle="dropdown">
           Bejelentkezés

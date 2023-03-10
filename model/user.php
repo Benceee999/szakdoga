@@ -25,6 +25,8 @@ class User{
                     $_SESSION["id"] = $row['ID'];
                     $_SESSION["jog"] = $row['Jog'];
                     $_SESSION["jelszo"] = $row['Jelszo'];
+                    $_SESSION["telefon"] = $row['Telefon'];
+                    $_SESSION["email"] = $row['email'];
                 }
                 else {
                     $eredmeny = 1; // Sikertelen belépés: hibás jelszó!

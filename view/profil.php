@@ -32,8 +32,12 @@
             <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
 
               <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
-              <h2>Horváth Bence</h2>
-              <h3>Méteres kékeres tulajdonos</h3>
+              <?php 
+              echo '
+              <h2> '.$_SESSION['nev'].' </h2>
+              <h3> '.$_SESSION['jog'].' </h3>
+              '
+              ?>
             </div>
           </div>
 
@@ -62,35 +66,40 @@
               <div class="tab-content pt-2">
 
                 <div class="tab-pane fade show active profile-overview" id="profile-overview">
-                  <h5 class="card-title">About</h5>
 
-                  <h5 class="card-title">Profile Details</h5>
-
+                  <h5 class="card-title">Profil adatok</h5>
+                  <?php 
+              echo '
+              
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
-                    <div class="col-lg-9 col-md-8">Kevin Anderson</div>
+                    <div class="col-lg-3 col-md-4 label ">Teljes név</div>
+                    <div class="col-lg-9 col-md-8">'.$_SESSION['nev'].'</div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Job</div>
-                    <div class="col-lg-9 col-md-8">Web Designer</div>
+                    <div class="col-lg-3 col-md-4 label">Jog</div>
+                    <div class="col-lg-9 col-md-8">'.$_SESSION['jog'].'</div>
                   </div>
 
                   <div class="row">
-                    <div class="col-lg-3 col-md-4 label">Phone</div>
-                    <div class="col-lg-9 col-md-8">(436) 486-3538 x29071</div>
+                    <div class="col-lg-3 col-md-4 label">Telefonszám</div>
+                    <div class="col-lg-9 col-md-8">'.$_SESSION['telefon'].'</div>
                   </div>
 
                   <div class="row">
                     <div class="col-lg-3 col-md-4 label">Email</div>
-                    <div class="col-lg-9 col-md-8">k.anderson@example.com</div>
+                    <div class="col-lg-9 col-md-8">'.$_SESSION['email'].'</div>
                   </div>
+                  '
+                  ?>
 
                 </div>
 
                 <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                   <!-- Profile Edit Form -->
+                  <?php 
+                  echo '
                   <form>
                     <div class="row mb-3">
                       <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
@@ -104,23 +113,23 @@
                     </div>
 
                     <div class="row mb-3">
-                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Full Name</label>
+                      <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Teljes név</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="fullName" type="text" class="form-control" id="fullName" value="Kevin Anderson">
+                        <input name="fullName" type="text" class="form-control" id="fullName" value="'.$_SESSION['nev'].'">
                       </div>
                     </div>
 
                     <div class="row mb-3">
-                      <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Phone</label>
+                      <label for="Phone" class="col-md-4 col-lg-3 col-form-label">Telefonszám</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="phone" type="text" class="form-control" id="Phone" value="(436) 486-3538 x29071">
+                        <input name="phone" type="text" class="form-control" id="Phone" value="'.$_SESSION['telefon'].'">
                       </div>
                     </div>
 
                     <div class="row mb-3">
                       <label for="Email" class="col-md-4 col-lg-3 col-form-label">Email</label>
                       <div class="col-md-8 col-lg-9">
-                        <input name="email" type="email" class="form-control" id="Email" value="k.anderson@example.com">
+                        <input name="email" type="email" class="form-control" id="Email" value="'.$_SESSION['email'].'">
                       </div>
                     </div>
 
@@ -129,7 +138,8 @@
                       <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
                   </form><!-- End Profile Edit Form -->
-
+                  '
+                  ?>
                 </div>
 
                 <div class="tab-pane fade pt-3" id="profile-change-password">

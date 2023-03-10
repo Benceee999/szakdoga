@@ -1,7 +1,3 @@
-<?php
-    include 'view/layout/head.php';
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,8 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-  <?php
+<?php
   require_once 'view/layout/sidebar.php';
   ?>
+    asdasdasasdasddsadsadasdas
 </body>
 </html>
