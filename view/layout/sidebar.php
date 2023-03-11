@@ -4,7 +4,7 @@
 <ul class="sidebar-nav" id="sidebar-nav">
 
   <li class="nav-item">
-    <a class="nav-link " href="#">
+    <a class="nav-link " href="index.php">
       <i class="bi bi-grid"></i>
       <span>Kezdőlap</span>
     </a>
@@ -20,7 +20,7 @@
     </a>
   </li><!-- End Hírek Nav -->
   <li class="nav-item">
-    <a class="nav-link" href="#">
+    <a class="nav-link" href="index.php?page=beosztas">
       <i class="bi bi-grid"></i><span>Beosztás</span>
     </a>
   </li><!-- End Beosztás Nav -->
@@ -39,7 +39,7 @@
   </li><!-- End Hírek Nav -->
 
   <li class="nav-item">
-    <a class="nav-link" href="#">
+    <a class="nav-link" href="index.php?page=korlevel">
       <i class="bi bi-grid"></i><span>Körlevél</span>
     </a>
   </li><!-- End Körlevél Nav -->

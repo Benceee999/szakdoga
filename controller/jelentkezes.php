@@ -3,5 +3,5 @@ require 'view/layout/head.php';
 
 
 
-require 'view/esemenyek.php';
+require 'view/jelentkezes.php';
 ?>

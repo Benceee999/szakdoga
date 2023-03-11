@@ -13,7 +13,7 @@
 
         <section class="section profile">
             <div class="row">
-    
+
                 <div class="col-xl-8">
 
                     <div class="card">
@@ -23,32 +23,29 @@
 
                                 <li class="nav-item">
                                     <button class="nav-link active" data-bs-toggle="tab"
-                                        data-bs-target="#gepjarmube">Gépjármű beléptetés</button>
+                                        data-bs-target="#ujesemeny">Beosztás listája</button>
                                 </li>
-
-                                <li class="nav-item">
-                                    <button class="nav-link" data-bs-toggle="tab"
-                                        data-bs-target="#gepjarmuki">Gépjármű kiléptetés</button>
-                                </li>
-
                                 <?php
                                 if ($_SESSION['jog'] == 'Admin' || $_SESSION['jog'] == 'vezető') {
                                     echo '
-                <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#korabbigepjarmu">Korábbi gépjármű mozgások</button>
-                </li>
-                ';
+                                <li class="nav-item">
+                                    <button class="nav-link" data-bs-toggle="tab"
+                                        data-bs-target="#korabbiesemeny">Beosztás kezelése</button>
+                                </li>';
                                 }
                                 ?>
+
                             </ul>
                             <div class="tab-content pt-2">
 
-                                <div class="tab-pane fade show active gepjarmube" id="gepjarmube">
+                                <div class="tab-pane fade show active ujesemeny" id="ujesemeny">
 
-                                    <h5 class="card-title">Gépjármű beléptetés kezelése</h5>
+                                    <h5 class="card-title">Beosztások</h5>
+
+                                      <!-- kilistázás -->
 
                                     <div class="row mb-3">
-                                        <label for="bedatum" class="col-md-4 col-lg-3 col-form-label">Beléptetés
+                                        <label for="bedatum" class="col-md-4 col-lg-3 col-form-label">Esemény
                                             dátuma</label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="bedatum" type="date" class="form-control" id="bedatum"
@@ -57,8 +54,8 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label for="rendszam" class="col-md-4 col-lg-3 col-form-label">Jármű
-                                            rendszáma</label>
+                                        <label for="rendszam" class="col-md-4 col-lg-3 col-form-label">Esemény
+                                            megnevezés</label>
                                         <div class="col-md-8 col-lg-9">
                                             <input name="rendszam" type="text" class="form-control" id="rendszam"
                                                 required>
@@ -66,19 +63,11 @@
                                     </div>
 
                                     <div class="row mb-3">
-                                        <label for="ceg" class="col-md-4 col-lg-3 col-form-label">Jármű szolgáltató
-                                            cég</label>
+                                        <label for="hibabe" class="col-md-4 col-lg-3 col-form-label">Jegyzőkönyv</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <!-- dropdown dbből -->
-                                            <input name="ceg" type="text" class="form-control" id="ceg" required>
-                                        </div>
-                                    </div>
-
-                                    <div class="row mb-3">
-                                        <label for="hibabe" class="col-md-4 col-lg-3 col-form-label">Esetleges
-                                            hiba</label>
-                                        <div class="col-md-8 col-lg-9">
-                                            <input name="hibabe" type="text" class="form-control" id="hibabe">
+                                            <textarea name="hibabe" type="text" class="form-control" id="hibabe"
+                                                rows="5" required>
+                                            </textarea>
                                         </div>
                                     </div>
                                     <div class="text-center">
@@ -87,14 +76,15 @@
 
                                 </div>
 
-                                <div class="tab-pane fade gepjarmuki pt-3" id="gepjarmuki">
+                                <div class="tab-pane fade korabbiesemeny pt-3" id="korabbiesemeny">
 
-                                    <div class="tab-pane fade show active gepjarmuki" id="gepjarmuki">
+                                    <div class="tab-pane fade show active korabbiesemeny" id="korabbiesemeny">
 
-                                        <h5 class="card-title">Gépjármű kiléptetés kezelése</h5>
+                                        <h5 class="card-title">Korábbi események</h5>
 
                                         <div class="row mb-3">
-                                            <label for="bedatum" class="col-md-4 col-lg-3 col-form-label">Kiléptetés dátuma</label>
+                                            <label for="bedatum" class="col-md-4 col-lg-3 col-form-label">Kiléptetés
+                                                dátuma</label>
                                             <div class="col-md-8 col-lg-9">
                                                 <input name="bedatum" type="date" class="form-control" id="bedatum"
                                                     required>
