@@ -29,10 +29,16 @@
 
         <div class="card">
           <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
-
-            <img src="assets/img/default.jpg" alt="Profile" class="rounded-circle">
             <?php
+
+            if (file_exists('assets/'.$_SESSION['id'].'.jpg')) {
+              echo '<img class="rounded-circle" src="assets/'.$_SESSION['id'].'.jpg">';
+            }
+            else {
+              echo '<img class="rounded-circle" src="assets/img/default.jpg">';
+            }
             echo '
+            
               <h2> ' . $_SESSION['nev'] . ' </h2>
               <h3> ' . $_SESSION['jog'] . ' </h3>
               '
@@ -100,23 +106,23 @@
               <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
 
                 <!-- Profile Edit Form -->
-                <?php
-                echo '
-                  <form>
-                    <div class="row mb-3">
-                      <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
-                      <div class="col-md-8 col-lg-9">
-                        <img src="assets/img/profile-img.jpg" alt="Profile">
-                        <div class="pt-2">
-                        <form action="index.php?page=felhasznalo&action=feltoltes" method="post" enctype="multipart/form-data">
-                        Profilkép feltöltése:
-                        <input type="file" name="profilkep" id="fileToUpload">
-                        <input type="submit" value="Feltöltés" name="submit">
-                    </form>
-                        </div>
+
+                <form action="?action=feltoltes" method="post" enctype="multipart/form-data">
+                  <div class="row mb-3">
+                    <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
+                    <div class="col-md-8 col-lg-9">
+                      <img src="assets/img/profile-img.jpg" alt="Profile">
+                      <div class="pt-2">
+                          Profilkép feltöltése:
+                          <input type="file" name="profilkep" id="fileToUpload">
+                          <input type="submit" value="Feltöltés" name="submit">
+                        </form>
                       </div>
                     </div>
+                  </div>
 
+                  <?php
+                  echo '
                     <div class="row mb-3">
                       <label for="fullName" class="col-md-4 col-lg-3 col-form-label">Teljes név</label>
                       <div class="col-md-8 col-lg-9">
@@ -137,14 +143,13 @@
                         <input name="email" type="email" class="form-control" id="Email" value="' . $_SESSION['email'] . '">
                       </div>
                     </div>
-
+                    '
+                    ?>
 
                     <div class="text-center">
                       <button type="submit" class="btn btn-primary">Save Changes</button>
                     </div>
                   </form><!-- End Profile Edit Form -->
-                  '
-                  ?>
               </div>
 
               <div class="tab-pane fade pt-3" id="profile-change-password">

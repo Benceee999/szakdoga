@@ -1,6 +1,9 @@
 <?php
 
-require 'model/user.php';
+require_once('db_inc.php');
+$db = new DB();
+
+require_once 'model/user.php';
 $user = new User($db);
 
 $eredmeny = "";
@@ -27,16 +30,13 @@ switch ($action) {
             $eredmeny = $eredmenySzovegek[$login];
         }
         break;
-    case 'feltoltes':
+        case 'feltoltes':
             $target_dir = "assets/";
             $target_file = $target_dir . $_SESSION['id'].".jpg";
     
             if (move_uploaded_file($_FILES["profilkep"]["tmp_name"], $target_file)) {
-                echo "The file ". htmlspecialchars( basename( $_FILES["profilkep"]["name"])). " has been uploaded.";
+                header('Location: index.php?page=profil');
             } 
-            else {
-                echo "Sorry, there was an error uploading your file.";
-            }
         break;
 }
 
