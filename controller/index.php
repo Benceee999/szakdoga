@@ -27,6 +27,17 @@ switch ($action) {
             $eredmeny = $eredmenySzovegek[$login];
         }
         break;
+    case 'feltoltes':
+            $target_dir = "assets/";
+            $target_file = $target_dir . $_SESSION['id'].".jpg";
+    
+            if (move_uploaded_file($_FILES["profilkep"]["tmp_name"], $target_file)) {
+                echo "The file ". htmlspecialchars( basename( $_FILES["profilkep"]["name"])). " has been uploaded.";
+            } 
+            else {
+                echo "Sorry, there was an error uploading your file.";
+            }
+        break;
 }
 
 require 'view/index.php';

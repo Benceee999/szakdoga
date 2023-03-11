@@ -108,8 +108,11 @@
                       <div class="col-md-8 col-lg-9">
                         <img src="assets/img/profile-img.jpg" alt="Profile">
                         <div class="pt-2">
-                          <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image"><i class="bi bi-upload"></i></a>
-                          <a href="#" class="btn btn-danger btn-sm" title="Remove my profile image"><i class="bi bi-trash"></i></a>
+                        <form action="index.php?page=felhasznalo&action=feltoltes" method="post" enctype="multipart/form-data">
+                        Profilkép feltöltése:
+                        <input type="file" name="profilkep" id="fileToUpload">
+                        <input type="submit" value="Feltöltés" name="submit">
+                    </form>
                         </div>
                       </div>
                     </div>

@@ -49,6 +49,12 @@
       <i class="bi bi-grid"></i><span>Felhasználók</span>
     </a>
   </li><!-- End Felhasználók Nav -->
+
+  <li class="nav-item">
+    <a class="nav-link" href="index.php?page=jelentkezok">
+      <i class="bi bi-grid"></i><span>Jelentkezők</span>
+    </a>
+  </li><!-- End jelentkezők Nav -->
 </ul>
   ';
 }

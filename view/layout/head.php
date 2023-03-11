@@ -48,6 +48,9 @@
 
 
 <?php 
+
+$img = "assets/".$_SESSION['id'].".jpg";
+
   if(isset($_SESSION['id']) ){
     if($_SESSION['jelszo'] == md5('Alap123')){
       echo "<script>alert('Kérem változtassa meg a jelszavát!');</script>";
@@ -61,9 +64,14 @@
       <nav class="header-nav ms-auto">
       <ul class="d-flex align-items-center">
       <li class="nav-item dropdown pe-3">
-
-      <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
-        <img src="assets/img/default.jpg" alt="Profil" title="Profil" class="rounded-circle">
+      
+      <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">';
+      if (file_exists($img)) {
+        echo '<img src=\"$img\"> alt="Profil" title="Profil" class="rounded-circle">';
+      }else{
+          echo '<img src="assets/img/default.jpg" alt="Profil" title="Profil" class="rounded-circle">';
+        }
+        echo '
         <span class="d-none d-md-block dropdown-toggle ps-2">'.$_SESSION['nev'].'</span>
       </a>
 
