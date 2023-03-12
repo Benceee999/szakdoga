@@ -21,22 +21,33 @@ $eredmenySzovegek = array(
 switch ($action) {
     case 'logout':
         session_unset();
-        $loginResult = "Sikeres kijelentkezés";
+        header('Location: index.php');
         break;
 
     case 'login':
         if (isset($_POST['username']) && isset($_POST['password'])) {
             $login = $user->checkLogin($_POST['username'], $_POST['password']);
             $eredmeny = $eredmenySzovegek[$login];
+            header('Location: index.php');
         }
         break;
-        case 'feltoltes':
-            $target_dir = "assets/";
+
+    case 'feltoltes':
+            $target_dir = "assets/img/";
             $target_file = $target_dir . $_SESSION['id'].".jpg";
-    
             if (move_uploaded_file($_FILES["profilkep"]["tmp_name"], $target_file)) {
                 header('Location: index.php?page=profil');
             } 
+        break;
+
+    case 'newuser':
+            if(isset($_POST['felhneve']) && isset($_POST['fullnev']) && isset($_POST['emailcim'])){
+                $felhneve = $_POST['felhneve'];
+				$fullnev = $_POST['fullnev'];
+				$emailcim = $_POST['emailcim'];
+				$user->newuser($felhneve, $fullnev, $emailcim);
+                header('Location: index.php?page=felhasznalok');
+            }
         break;
 }
 

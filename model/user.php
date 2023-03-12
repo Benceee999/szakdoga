@@ -39,6 +39,10 @@ class User
         }
         return $eredmeny;
     }
-
+    public function newuser($felhneve, $fullnev, $emailcim){
+        $sql = "INSERT INTO felhasznalok (ID, Felhasznalonev, Nev, Telefon, email, Jog, Jelszo) VALUES (NULL,'$felhneve','$fullnev', NULL, '$emailcim', 'User','".md5("Alap123")."')";
+        $result = $this->db->dbinsert($sql);
+        echo "sikeres hozzáadás";
+    }
 }
 ?>

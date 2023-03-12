@@ -31,8 +31,8 @@
           <div class="card-body profile-card pt-4 d-flex flex-column align-items-center">
             <?php
 
-            if (file_exists('assets/'.$_SESSION['id'].'.jpg')) {
-              echo '<img class="rounded-circle" src="assets/'.$_SESSION['id'].'.jpg">';
+            if (file_exists('assets/img/'.$_SESSION['id'].'.jpg')) {
+              echo '<img class="rounded-circle" src="assets/img/'.$_SESSION['id'].'.jpg">';
             }
             else {
               echo '<img class="rounded-circle" src="assets/img/default.jpg">';
@@ -111,11 +111,11 @@
                   <div class="row mb-3">
                     <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
                     <div class="col-md-8 col-lg-9">
-                      <img src="assets/img/profile-img.jpg" alt="Profile">
                       <div class="pt-2">
-                          Profilkép feltöltése:
-                          <input type="file" name="profilkep" id="fileToUpload">
-                          <input type="submit" value="Feltöltés" name="submit">
+                          Profilkép feltöltése: <br>
+                          <!-- <a href="#" class="btn btn-primary btn-sm" title="Upload new profile image" ><i class="bi bi-upload"></i></a> -->
+                          <input type="file" name="profilkep" id="fileToUpload" class="btn btn-primary btn-sm"> <br>
+                          <input type="submit" value="Feltöltés" name="submit" class="btn btn-primary btn-sm">
                         </form>
                       </div>
                     </div>

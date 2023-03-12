@@ -64,11 +64,11 @@
       <li class="nav-item dropdown pe-3">
       
       <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">';
-      if (file_exists('assets/'.$_SESSION['id'].'.jpg')) {
-        echo '<img class="rounded-circle" src="assets/'.$_SESSION['id'].'.jpg" width="50" height="50">';
+      if (file_exists('assets/img/'.$_SESSION['id'].'.jpg')) {
+        echo '<img class="rounded-circle" src="assets/img/'.$_SESSION['id'].'.jpg">';
     }
     else {
-        echo '<img class="rounded-circle" src="assets/img/default.jpg" width="50" height="50">';
+        echo '<img class="rounded-circle" src="assets/img/default.jpg">';
     }
         echo '
         <span class="d-none d-md-block dropdown-toggle ps-2">'.$_SESSION['nev'].'</span>
@@ -116,7 +116,7 @@
           Bejelentkezés
         </a>
         <div class="dropdown-menu dropdown-menu-right">
-            <form class="px-4 py-3" action="index.php" method="post">
+            <form class="px-4 py-3" action="?action=login" method="post">
                 <div class="form-group">
                     <label for="username">Felhasználónév</label>
                     <input type="text" class="form-control" id="username" name="username" placeholder="Felhasználónév">
@@ -128,8 +128,6 @@
                 <button type="submit" name="submit" class="btn btn-primary">Bejelentkezés</button>
                 <br>
                 <a class="form-group" href="#">Elfelejtett jelszó</a>
-                <input type="hidden" name="action" value="login">
-                <input type="hidden" name="page" value="index">
             </form>
         </div>
     ';

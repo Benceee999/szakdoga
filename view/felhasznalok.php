@@ -1,66 +1,64 @@
 <main id="main" class="main">
 
-    <section class="section profile">
-      <div class="row">
+  <section class="section profile">
+    <div class="row">
 
-        <div class="col-xl-8">
+      <div class="col-xl-8">
 
-          <div class="card">
-            <div class="card-body pt-3">
-              <!-- Bordered Tabs -->
-              <ul class="nav nav-tabs nav-tabs-bordered">
+        <div class="card">
+          <div class="card-body pt-3">
+            <!-- Bordered Tabs -->
+            <ul class="nav nav-tabs nav-tabs-bordered">
 
-                <li class="nav-item">
-                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Felhasználó hozzáadása</button>
-                </li>
+              <li class="nav-item">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Felhasználó
+                  hozzáadása</button>
+              </li>
 
-                <li class="nav-item">
-                  <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Felhasználók kezelése</button>
-                </li>
+              <li class="nav-item">
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#profile-edit">Felhasználók
+                  kezelése</button>
+              </li>
 
-              </ul>
-              <div class="tab-content pt-2">
+            </ul>
+            <div class="tab-content pt-2">
               <!-- Új felhasználó hozzáadása -->
-                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+              <div class="tab-pane fade show active profile-overview" id="profile-overview">
 
-                  <h5 class="card-title">Új felhasználó felvétele</h5>
-                  <?php
-                  echo '
-          
+                <h5 class="card-title">Új felhasználó felvétele</h5>
+                <form action="?action=newuser" method="post" enctype="multipart/form-data">
                   <div class="row mb-3">
-                  <label for="felhneve" class="col-md-4 col-lg-3 col-form-label">Felhasználónév</label>
-                  <div class="col-md-8 col-lg-9">
-                    <input name="text" type="text" class="form-control" id="felhneve" required>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <label for="fullnev" class="col-md-4 col-lg-3 col-form-label">Teljes név</label>
-                  <div class="col-md-8 col-lg-9">
-                    <input name="fullnev" type="text" class="form-control" id="fullnev" required>
-                  </div>
-                </div>
-
-                <div class="row mb-3">
-                  <label for="emailcim" class="col-md-4 col-lg-3 col-form-label">Email-cím</label>
-                  <div class="col-md-8 col-lg-9">
-                    <input name="emailcim" type="text" class="form-control" id="emailcim" required>
-                  </div>
-                </div>
-
-                <div class="text-center">
-                      <button type="submit" class="btn btn-primary">Felhasználó hozzáadása</button>
+                    <label for="felhneve" class="col-md-4 col-lg-3 col-form-label">Felhasználónév</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="felhneve" type="text" class="form-control" id="felhneve" required>
                     </div>
-              '
-                    ?>
+                  </div>
 
-                </div>
+                  <div class="row mb-3">
+                    <label for="fullnev" class="col-md-4 col-lg-3 col-form-label">Teljes név</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="fullnev" type="text" class="form-control" id="fullnev" required>
+                    </div>
+                  </div>
 
-                <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+                  <div class="row mb-3">
+                    <label for="emailcim" class="col-md-4 col-lg-3 col-form-label">Email-cím</label>
+                    <div class="col-md-8 col-lg-9">
+                      <input name="emailcim" type="text" class="form-control" id="emailcim" required>
+                    </div>
+                  </div>
 
-                  <!-- Felhasználók listája -->
-                  <?php
-                  echo '
+                  <div class="text-center">
+                    <button type="submit" class="btn btn-primary">Felhasználó hozzáadása</button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="tab-pane fade profile-edit pt-3" id="profile-edit">
+
+                <!-- Felhasználók listája -->
+                <?php
+                echo '
               <form>
                 <div class="row mb-3">
                   <label for="profileImage" class="col-md-4 col-lg-3 col-form-label">Profile Image</label>
@@ -100,16 +98,16 @@
                 </div>
               </form><!-- End Profile Edit Form -->
               '
-                    ?>
-                </div>
+                  ?>
+              </div>
 
-              </div><!-- End Bordered Tabs -->
+            </div><!-- End Bordered Tabs -->
 
-            </div>
           </div>
-
         </div>
-      </div>
-    </section>
 
-  </main><!-- End #main -->
+      </div>
+    </div>
+  </section>
+
+</main><!-- End #main -->
