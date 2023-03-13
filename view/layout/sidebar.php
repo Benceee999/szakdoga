@@ -33,25 +33,25 @@
     <li class="nav-heading">Vezetőségi részleg</li>
 
   <li class="nav-item">
-    <a class="nav-link" href="index.php?page=hirek">
+    <a class="nav-link" href="?page=hirek">
       <i class="bi bi-grid"></i><span>Hírek</span>
     </a>
   </li><!-- End Hírek Nav -->
 
   <li class="nav-item">
-    <a class="nav-link" href="index.php?page=korlevel">
+    <a class="nav-link" href="?page=korlevel">
       <i class="bi bi-grid"></i><span>Körlevél</span>
     </a>
   </li><!-- End Körlevél Nav -->
 
   <li class="nav-item">
-    <a class="nav-link" href="index.php?page=felhasznalok">
+    <a class="nav-link" href="?page=felhasznalok">
       <i class="bi bi-grid"></i><span>Felhasználók</span>
     </a>
   </li><!-- End Felhasználók Nav -->
 
   <li class="nav-item">
-    <a class="nav-link" href="index.php?page=jelentkezok">
+    <a class="nav-link" href="?page=jelentkezok">
       <i class="bi bi-grid"></i><span>Jelentkezők</span>
     </a>
   </li><!-- End jelentkezők Nav -->

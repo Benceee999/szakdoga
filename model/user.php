@@ -42,7 +42,17 @@ class User
     public function newuser($felhneve, $fullnev, $emailcim){
         $sql = "INSERT INTO felhasznalok (ID, Felhasznalonev, Nev, Telefon, email, Jog, Jelszo) VALUES (NULL,'$felhneve','$fullnev', NULL, '$emailcim', 'User','".md5("Alap123")."')";
         $result = $this->db->dbinsert($sql);
-        echo "sikeres hozzáadás";
+        /* echo "sikeres hozzáadás"; */
     }
+
+    public function sendmail($felhneve, $fullnev, $emailcim) {
+		$headers = 'From: me@example.com' . "\r\n" .
+        'Reply-To: me@example.com' . "\r\n" .
+        "X-Mailer: PHP/" . phpversion();
+        $subject = "Felvetel";
+		$message = "Hello world";
+		mail($emailcim, $subject, $message, $headers);
+	}
+    
 }
 ?>
