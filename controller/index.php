@@ -46,13 +46,11 @@ switch ($action) {
 				$fullnev = $_POST['fullnev'];
 				$emailcim = $_POST['emailcim'];
 
-				if($user->sendmail($felhneve,$fullnev,$emailcim)){
-                    $user->newuser($felhneve, $fullnev, $emailcim);
-                }else{
-                    echo 'szarban a haza';
-                }
+				$user->newuser($felhneve, $fullnev, $emailcim);
+                $user->sendmail($emailcim,$felhneve,$fullnev);
+               
 
-                /* header('Location: index.php?page=felhasznalok'); */
+                header('Location: index.php?page=felhasznalok');
             }
         break;
 }
