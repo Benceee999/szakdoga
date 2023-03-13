@@ -50,9 +50,9 @@
 <?php 
 
   if(isset($_SESSION['id']) ){
-    if($_SESSION['jelszo'] == md5('Alap123')){
+    /* if($_SESSION['jelszo'] == md5('Alap123')){
       echo "<script>alert('Kérem változtassa meg a jelszavát!');</script>";
-    }
+    } */
     echo '
     <i class="bi bi-list toggle-sidebar-btn"></i>
     ';

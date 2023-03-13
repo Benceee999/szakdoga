@@ -43,8 +43,7 @@
                                     <div class="row mb-3">
                                         <label for="hibabe" class="col-md-4 col-lg-3 col-form-label">Körlevél szövege</label>
                                         <div class="col-md-8 col-lg-9">
-                                            <textarea name="hibabe" type="text" class="form-control" id="hibabe" rows="5" required>
-                                            </textarea>
+                                            <textarea name="hibabe" type="text" class="form-control" id="hibabe" rows="5" required></textarea>
                                         </div>
                                     </div>
                                     <div class="text-center">

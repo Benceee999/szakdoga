@@ -48,6 +48,9 @@
                     </div>
                   </div>
 
+                  <div class="row mb-3" id="hibauzenet">
+                  </div>
+
                   <div class="text-center">
                     <button type="submit" class="btn btn-primary">Felhasználó hozzáadása</button>
                   </div>

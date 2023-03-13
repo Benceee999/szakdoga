@@ -47,11 +47,22 @@ switch ($action) {
 				$emailcim = $_POST['emailcim'];
 
 				$user->newuser($felhneve, $fullnev, $emailcim);
-                $user->sendmail($emailcim,$felhneve,$fullnev);
+                $user->sendmail($emailcim,$fullnev,$felhneve);
                
 
                 header('Location: index.php?page=felhasznalok');
             }
+        break;
+    case 'changeuser':
+        if(isset($_POST['felhneve']) && isset($_POST['fullnev']) && isset($_POST['emailcim']) && isset($_POST['telefon'])){
+            $felhneve = $_POST['felhneve'];
+            $fullnev = $_POST['fullnev'];
+            $emailcim = $_POST['emailcim'];
+            $telefon = $_POST['phone'];
+
+            $user->updateuser($felhneve,$fullnev,$telefon,$emailcim);
+            header('Location: index.php?page=profil');
+        }
         break;
 }
 

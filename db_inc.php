@@ -48,6 +48,12 @@ class DB {
 			return 'Nem jó.';
 		}
 	}
+    public function dbUpdate($sql){
+        if ($this->conn->query($sql) === true) {return null;}
+        else {
+            echo "nem jó";
+        }
+    }
 }
 
 
